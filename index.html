@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Organis.ms</title>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            html, body {
+                font-family: 'Roboto Slab'
+                serif;
+                background: #f5f5f5;
+                margin: 0;
+            }
+            #header {
+                -webkit-transition: opacity 2s ease-out 1s;
+                -moz-transition: opacity 2s ease-out 1s;
+                -ms-transition: opacity 2s ease-out 1s;
+                transition: opacity 2s ease-out 1s;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                -webkit-transform: translate( -50%, -50% );
+                -moz-transform: translate( -50%, -50% );
+                -ms-transform: translate( -50%, -50% );
+                -o-transform: translate( -50%, -50% );
+                transform: translate( -50%, -50% );
+                pointer-events: none;
+                background: transparent;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+            }
+            #header h1 {
+                letter-spacing: 0.01em;
+                font-weight: 100;
+                font-size: 4.2em;
+                opacity: 0.6;
+                color: #EF746F;
+                color: #FF4E50;
+                margin: 0;
+            }
+            #header.faded {
+                opacity: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container"></div>
+        <header id="header" class="faded">
+            <h1>organis.ms</h1>
+        </header>
+        <!-- libs -->
+        <script type="text/javascript" src="vendor/sketch.min.js"></script>
+        <script type="text/javascript" src="vendor/dat.gui.min.js"></script>
+        <!-- core -->
+        <script type="text/javascript" src="output/core.js"></script>
+        <script type="text/javascript" src="output/utils.js"></script>
+        <script type="text/javascript" src="output/geom/vector.js"></script>
+        <script type="text/javascript" src="output/world/agent.js"></script>
+        <!-- behaviors -->
+        <script type="text/javascript" src="output/behaviors/separate.js"></script>
+        <script type="text/javascript" src="output/behaviors/wander.js"></script>
+        <script type="text/javascript" src="output/behaviors/bounds.js"></script>
+        <script type="text/javascript" src="output/behaviors/cohere.js"></script>
+        <script type="text/javascript" src="output/behaviors/align.js"></script>
+        <script type="text/javascript" src="output/behaviors/seek.js"></script>
+        <script type="text/javascript" src="output/behaviors/flee.js"></script>
+        <!-- demos -->
+        <script type="text/javascript" src="demos/renderer.js"></script>
+        <script type="text/javascript" src="demos/wander.js"></script>
+        <script type="text/javascript" src="demos/chase.js"></script>
+        <script type="text/javascript" src="demos/flock.js"></script>
+        <script type="text/javascript" src="demos/seek.js"></script>
+        <script type="text/javascript" src="demos/flee.js"></script>
+        <script type="text/javascript" src="demos/demos.js"></script>
+    </body>
+</html>

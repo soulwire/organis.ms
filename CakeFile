@@ -1,0 +1,15 @@
+
+fs            = require 'fs'
+uglify        = require 'uglify-js'
+{exec, spawn} = require 'child_process'
+
+config =
+    deploy: 'deploy'
+    output: 'output'
+    source: 'source'
+
+task 'watch', 'Watch & compile changes from source to output', ->
+
+    watch = exec "coffee -o #{config.output}/ -cwb #{config.source}/"
+    watch.stdout.on 'data', (data) ->
+        process.stdout.write data
