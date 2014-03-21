@@ -1,6 +1,6 @@
 
 // Global GUI
-var gui = new dat.GUI();
+var gui;// = new dat.GUI();
 
 (function() {
 
@@ -38,13 +38,15 @@ var gui = new dat.GUI();
     //     select.add( demos, demo ).onChange( changeDemo );
     // }
 
-    gui = gui.addFolder( 'Demo Options' );
-    gui.close();
+    // gui = gui.addFolder( 'Demo Options' );
+    // gui.close();
 
     // Start up first demo
     demos.Flock();
 
     var faded = document.querySelector( '.faded' );
-    faded.classList.remove( 'faded' );
+    setTimeout( function() {
+        faded.classList.remove( 'faded' );
+    }, 0);
 
 })();

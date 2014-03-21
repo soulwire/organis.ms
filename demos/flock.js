@@ -70,14 +70,18 @@ function FlockDemo() {
                 }));
             }
 
-            gui.add( align, 'radius' ).min( 50 ).max( 1000 ).name( 'Align Radius' );//.listen();
-            gui.add( align, 'weight' ).min( 0.0 ).max( 1.0 ).name( 'Align Weight' );//.listen();
+            if ( gui ) {
 
-            gui.add( cohere, 'radius' ).min( 50 ).max( 1000 ).name( 'Cohere Radius' );//.listen();
-            gui.add( cohere, 'weight' ).min( 0.0 ).max( 1.0 ).name( 'Cohere Weight' );//.listen();
+                gui.add( align, 'radius' ).min( 50 ).max( 1000 ).name( 'Align Radius' );
+                gui.add( align, 'weight' ).min( 0.0 ).max( 1.0 ).name( 'Align Weight' );
 
-            gui.add( separate, 'radius' ).min( 0 ).max( 100 ).name( 'Avoid Radius' );//.listen();
-            gui.add( separate, 'weight' ).min( 0.0 ).max( 10.0 ).name( 'Avoid Weight' );//.listen();
+                gui.add( cohere, 'radius' ).min( 50 ).max( 1000 ).name( 'Cohere Radius' );
+                gui.add( cohere, 'weight' ).min( 0.0 ).max( 1.0 ).name( 'Cohere Weight' );
+
+                gui.add( separate, 'radius' ).min( 0 ).max( 100 ).name( 'Avoid Radius' );
+                gui.add( separate, 'weight' ).min( 0.0 ).max( 10.0 ).name( 'Avoid Weight' );
+            }
+
         },
 
         update: function() {
