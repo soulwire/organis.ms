@@ -1,0 +1,23 @@
+{
+  "name": "organis.ms",
+  "version": "1.0.0",
+  "description": "organis.ms",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulwire/organis.ms.git"
+  },
+  "author": "Justin Windle <justin@soulwire.co.uk>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soulwire/organis.ms/issues"
+  },
+  "homepage": "https://github.com/soulwire/organis.ms#readme",
+  "devDependencies": {
+    "uglify-js": "^2.7.5"
+  }
+}

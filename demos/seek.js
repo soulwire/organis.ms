@@ -17,6 +17,7 @@ function SeekDemo() {
     return Sketch.create({
 
         container: document.getElementById( 'container' ),
+        retina: 'auto',
 
         setup: function() {
 

@@ -13,11 +13,12 @@ function FlockDemo() {
     var agents = [];
     var mouse = new Vector();
     var bounds = new Bounds();
-    var align, cohere, separate;
+    var flee, align, cohere, separate;
 
     return Sketch.create({
 
         container: document.getElementById( 'container' ),
+        retina: 'auto',
 
         setup: function() {
 
@@ -26,6 +27,12 @@ function FlockDemo() {
             mouse.set( this.width * 0.5, this.height * 0.5 );
 
             // Define behaviors
+
+            flee = new Flee({
+                target: mouse,
+                radius: 0,
+                weight: 2.0
+            });
 
             align = new Align({
                 radius: 100,
@@ -59,7 +66,7 @@ function FlockDemo() {
                 });
 
                 agents.push( new Agent({
-                    behaviors: [ bounds, /*wander,*/ align, cohere, separate ],
+                    behaviors: [ bounds, flee, /*wander,*/ align, cohere, separate ],
                     maxForce: random( 0.2, 0.7 ),
                     maxSpeed: random( 2.0, 25.0 ),
                     radius: random( 8, 32 ),
@@ -85,6 +92,9 @@ function FlockDemo() {
         },
 
         update: function() {
+
+            flee.radius *= 0.99;
+            flee.weight *= 0.99;
 
             // Update agents
             for ( var i = 0; i < NUM_AGENTS; i++ ) {
@@ -122,6 +132,8 @@ function FlockDemo() {
 
             // Update mouse
             mouse.set( this.mouse.x, this.mouse.y );
+            flee.radius = 400;
+            flee.weight = 10;
         }
     });
 }
