@@ -1,7 +1,16 @@
 
 function FlockDemo() {
 
-    var NUM_AGENTS = 200;
+    var NUM_AGENTS = Math.round(
+        Math.min(200,
+            Math.max(20,
+                Math.sqrt(
+                    Math.pow(window.innerWidth, 2),
+                    Math.pow(window.innerHeight, 2)
+                ) / 6
+            )
+        )
+    );
     var COLOURS = [
         '#FE4365', '#FC9D9A', '#F9CDAD', '#C8C8A9',
         '#83AF9B', '#FF4E50', '#FC913A', '#F9D423',
